@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        // Work with the absolute value of N
+        N = Math.abs(N);
+
+        int maxDigit = 0;
+        int minDigit = 9;
+
+        // Handle case when N is 0
+        if (N == 0) {
+            maxDigit = minDigit = 0;
+        }
+
+        while (N > 0) {
+            int digit = N % 10;
+            if (digit > maxDigit) {
+                maxDigit = digit;
+            }
+            if (digit < minDigit) {
+                minDigit = digit;
+            }
+            N /= 10;
+        }
+
+        System.out.println(maxDigit + " " + minDigit);
+    }
+}
+
+    
